@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:barcode_scan/barcode_scan.dart';
+// import 'package:barcode_scan/barcode_scan.dart';
 import 'package:file_picker_cross/file_picker_cross.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -166,19 +166,20 @@ class _JSONTextFormFieldState extends State<JSONTextFormField> {
         case ActionTypes.qrScan:
           return IconButton(
             onPressed: () async {
-              if (Platform.isAndroid || Platform.isIOS) {
-                try {
-                  var result = await BarcodeScanner.scan();
-                  await _suffixIconAction(inputValue: result.rawContent);
-                } on PlatformException catch (e) {
-                  print(e);
-                } on FormatException {
-                } catch (e) {
-                  print("format error: $e");
-                }
-              } else if (Platform.isMacOS) {
-                //TODO: Add macOS support
-              }
+              // TODO??
+              // if (Platform.isAndroid || Platform.isIOS) {
+              //   try {
+              //     var result = await BarcodeScanner.scan();
+              //     await _suffixIconAction(inputValue: result.rawContent);
+              //   } on PlatformException catch (e) {
+              //     print(e);
+              //   } on FormatException {
+              //   } catch (e) {
+              //     print("format error: $e");
+              //   }
+              // } else if (Platform.isMacOS) {
+              //   //TODO: Add macOS support
+              // }
             },
             icon: Icon(Icons.camera_alt),
           );
