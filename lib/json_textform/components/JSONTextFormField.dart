@@ -147,10 +147,11 @@ class _JSONTextFormFieldState extends State<JSONTextFormField> {
                             File file = File(pickedFile.path);
                             await _suffixIconAction(image: file);
                           } else if (Platform.isMacOS) {
-                            FilePickerCross filePickerCross = FilePickerCross();
-                            await filePickerCross.pick();
-                            File file = File(filePickerCross.path);
-                            await _suffixIconAction(image: file);
+                            // TODO ??
+                            // FilePickerCross filePickerCross = FilePickerCross();
+                            // await filePickerCross.pick();
+                            // File file = File(filePickerCross.path);
+                            // await _suffixIconAction(image: file);
                           }
                         },
                       )
@@ -171,7 +172,8 @@ class _JSONTextFormFieldState extends State<JSONTextFormField> {
                   await _suffixIconAction(inputValue: result.rawContent);
                 } on PlatformException catch (e) {
                   print(e);
-                } on FormatException {} catch (e) {
+                } on FormatException {
+                } catch (e) {
                   print("format error: $e");
                 }
               } else if (Platform.isMacOS) {

@@ -116,20 +116,21 @@ class JSONFileField extends StatelessWidget {
                   IconButton(
                     key: Key("Upload"),
                     onPressed: () async {
-                      File file;
-                      if (onFileUpload != null) {
-                        file = await onFileUpload(schema.name);
-                      } else {
-                        FilePickerCross filePickerCross = FilePickerCross();
-                        try {
-                          await filePickerCross.pick();
-                          file = File(filePickerCross.path);
-                        } catch (err) {}
-                      }
-                      value.file = file;
-                      if (file != null) {
-                        onSaved(value);
-                      }
+                      // TODO ??
+                      // File file;
+                      // if (onFileUpload != null) {
+                      //   file = await onFileUpload(schema.name);
+                      // } else {
+                      //   FilePickerCross filePickerCross = FilePickerCross();
+                      //   try {
+                      //     await filePickerCross.pick();
+                      //     file = File(filePickerCross.path);
+                      //   } catch (err) {}
+                      // }
+                      // value.file = file;
+                      // if (file != null) {
+                      //   onSaved(value);
+                      // }
                     },
                     icon: Icon(Icons.file_upload),
                   )
